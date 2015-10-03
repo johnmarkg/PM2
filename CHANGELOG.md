@@ -1,3 +1,76 @@
+
+# 0.15.x & 1.0
+
+## Breaking change
+
+- --next-gen-js option has been removed
+- pm2 iprobe command removed
+
+## Changelog
+
+- pm2 multiset "k1 v1 k2 v2 k3 v3"
+- babel dependency removed
+- blessed dependency removed
+- chalk, safe-clone-deep, shelljs, semver upgraded
+- New command: pm2 module:update <module_name> -> Update a module
+- New command: pm2 module:publish  -> Publish module in current folder + Git push
+- New command: pm2 module:generate [module name] -> Generate a sample module
+- Feature: configuration system for raw Node.js applications
+- alias pm2 install with pm2 i
+- JSON declaration: You can now use process.env in application declaration file
+- watch has been refactored for windows and tests
+- allow installation of specific module version
+- wrap final process kill intro try catch (c4aecc8)
+- Appveyor to test PM2 under Windows added (+ fix some incorect file name)
+- Allow to escape key name when using pm2 conf system
+
+# 0.14.7
+
+- New flag `--no-pmx` : starts an app without injecting pmx
+- New feature : cron restart now works in fork mode as well
+- Disabled auto-gc on interactor
+- Allow PM2 to execute binaries in $PATH
+- pm2 link priv pub --recyle for elastic infrastructure
+- pm2 deploy now check default file ecosystem.js[on|on5], package.json
+
+# 0.14.6
+
+- Scoped PM2 actions
+- Password encryption via pm2 set pm2:passwd xxxx
+- Interactor Remote action refactor
+- .getSync method to get configuration variable synchronously
+- Add password protected PM2 methods (install, delete)
+- pm2 get|pm2 conf display all confs
+- Password protected PM2 flag
+- New flag : `--restart-delay <ms>` (or `restart_delay` in JSON declaration)
+- New command : `pm2 deepUpdate`
+- New command (beta) : `pm2 logrotate`
+- Enhancement : pm2 handles processes that can't be killed in a better way
+- Fix : some ignore_watch issues
+- Fix : some pm2 startup systemd issues
+
+# 0.14.5
+
+- Hot fix
+
+# 0.14.4
+
+- New command : `pm2 iprobe [app_name|app_id|'ALL']`
+- Feature: FreeBSD startup script
+- Fix: Remove forced GC
+- Fix: #1444 --next-gen-js in fork mode
+- Fix: Windows path fix
+
+# 0.14.3 (Current Stable)
+
+- `pm2 flush` now flushes pm2.log as well
+- New flag : `--no-treekill` : when used PM2 won't kill children processes
+- New flags : `pm2 logs ['all'|'PM2'|app_name|app_id] [--err|--out] [--lines <n>] [--raw] [--timestamp [format]]`
+- Enhancement: Modules installable via Github: `pm2 install username/repository`
+- Feature: PMX has *scoped function* -> pm2 stores temporary output from custom functions
+- Fix: Interactor issue when doing an heapdump
+- Feature: PM2 CLI autocompletion
+
 # 0.14.2
 
 - Improved pm2-dev
